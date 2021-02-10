@@ -1,0 +1,77 @@
+/***************************************************
+  CSS変数と、'#テーマ側で付けたid' を変更して使ってください
+  idがない場合は html（ライト） か html.dark（ダーク）
+***************************************************/
+
+/* CSS変数 */
+:root {
+  /* 相手のメッセージの背景 */
+  --color1: #ebeef0;
+  /* 相手のメッセージのフォントカラー */
+  --fColor1: #0f1419;
+  /* 相手のメッセージ内のリンクのフォントカラー */
+  --fColorA1: #1b95e0;
+  /* 自分のメッセージの背景 */
+  --color2: #1da1f2;
+  /* 自分のメッセージのフォントカラー */
+  --fColor2: #fff;
+  /* 自分のメッセージ内のリンクのフォントカラー */
+  --fColorA2: #fff;
+}
+
+#テーマ側で付けたid .md-customDM > article {
+  min-height: unset !important;
+}
+
+/* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='top'] {
+  margin: -1px 0 6px !important;
+}
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='top'] > div {
+  padding: 8px 10px 0 !important;
+}
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='bottom'] {
+  margin: -1px 0 0 !important;
+}
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='bottom'] > div {
+  padding: 0 10px !important;
+}
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='bottom last'] {
+  margin: 6px 0 -1px !important;
+}
+#テーマ側で付けたid .md-customDM > article[md-onajiuser='bottom last'] > div {
+  padding: 0 10px 8px !important;
+}
+
+/* メッセージ全体（ここは透明で固定） */
+#テーマ側で付けたid .js-message-detail.md-customDM > article {
+  background-color: #0000 !important;
+}
+/* 相手のメッセージ */
+#テーマ側で付けたid .md-customDM > article .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color1) !important;
+  color: var(--fColor1) !important;
+}
+/* 自分のメッセージ */
+#テーマ側で付けたid .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color2) !important;
+  color: var(--fColor2) !important;
+}
+/* 相手の引用ツイート */
+#テーマ側で付けたid .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color1) !important;
+}
+/* 自分の引用ツイート */
+#テーマ側で付けたid .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color2) !important;
+}
+/* 相手のメッセージ内のリンク */
+#テーマ側で付けたid .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA1) !important;
+}
+/* 自分のメッセージ内のリンク */
+#テーマ側で付けたid .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA2) !important;
+}
